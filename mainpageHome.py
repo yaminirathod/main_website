@@ -76,6 +76,33 @@ def contactus_data():
         mongodb_contactus_insert(firstname, lastname, emailid, contact, dob, city, state, country, subject)
     return result.format(firstname, lastname, emailid, contact, dob, city, state, country, subject)
 
+#http://127.0.0.1:5000/bookingdata
+@app.route("/bookingdata", methods = ['POST'])
+def booking_data():
+    from database_operations import mongodb_booking_insert
+    import uuid
+    uid = uuid.uuid4()
+    if request.method == "POST":
+        countryFrom = request.form.get('countryFrom')
+        countryTo = request.form.get('countryTo')
+        departing = request.form.get('departing')
+        returning = request.form.get('returning')
+
+        result = '''
+        <body bgcolor="lightblue">
+        <h1>Your Booking has been done!!</h1>
+        <h1>Your Booking Receipt :</h1>
+        <p>Source : {}</p>
+        <p>Destination : {}</p>
+        <p>Departure : {}</p>
+        <p>Returning : {}</p>
+        <p>Booking Reference : {}</p>
+        <h3>Please print your receipt!!</h3>
+        </body>
+        '''
+        mongodb_booking_insert(countryFrom, countryTo, departing, returning, uid)
+    return result.format(countryFrom, countryTo, departing, returning, uid)
+
 #http://127.0.0.1:5000/contactusfilleddata
 @app.route("/contactusfilleddata")
 def contactus_filled_data():
@@ -216,6 +243,60 @@ def contactus_filled_data_delete1():
     cairlambton = db["airlambton"]
     cairlambton.delete_one({})
     return render_template("admin.html")
+
+#http://127.0.0.1:5000/managebookingdata
+@app.route("/managebookingdata")
+def managebookingdata():
+    connection_string = "mongodb+srv://root:root@cluster0.dhp4w.mongodb.net/emerging_final_project?retryWrites=true&w=majority"
+    my_client = pymongo.MongoClient(connection_string)
+    db = my_client["emerging_final_project"]
+    cairlambtonmanage = db["airlambtonbooking"]
+    columns = {"Source", "Destination", "Departure", "Return", "BookingReference"}
+    result = cairlambtonmanage.find({}, columns)
+    fetched_countryFrom = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    fetched_countryTo = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    fetched_departing = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    fetched_returning = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    fetched_uid = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    i = 0
+    count = 0
+    for row in result:
+        fetched_countryFrom[i] = row['Source']
+        fetched_countryTo[i] = row['Destination']
+        fetched_departing[i] = row['Departure']
+        fetched_returning[i] = row['Return']
+        fetched_uid[i] = row['BookingReference']
+        i = i + 1
+        print(row)
+
+    resultdisplay = '''
+            <html lang="en">
+            <head>
+            <link rel="stylesheet" href="static/style.css">
+            </head>
+            <body bgcolor=#f7eaea>
+            <div class="contactusdisplay">
+                <hr/><hr/><h1>Hi! Here is your booking details!!</h1><hr/><hr/>
+                <h3>Booking Information :</h3><hr/>
+                <h4>Country From : {} <br/> Country To : {} <br/> Departing : {} <br/> Returning : {} <br/> Booking Reference : {} <br/>
+                <hr/>
+                <h4>Country From : {} <br/> Country To : {} <br/> Departing : {} <br/> Returning : {} <br/> Booking Reference : {} <br/>
+                <hr/>
+                <h4>Country From : {} <br/> Country To : {} <br/> Departing : {} <br/> Returning : {} <br/> Booking Reference : {} <br/>
+                <hr/>
+                <h4>Country From : {} <br/> Country To : {} <br/> Departing : {} <br/> Returning : {} <br/> Booking Reference : {} <br/>
+                <hr/>
+                <h4>Country From : {} <br/> Country To : {} <br/> Departing : {} <br/> Returning : {} <br/> Booking Reference : {} <br/>
+                <hr/>
+            </div>
+            </body>
+            </html>
+                        '''
+    return resultdisplay.format(fetched_countryFrom[0], fetched_countryTo[0], fetched_departing[0], fetched_returning[0], fetched_uid[0],
+                                fetched_countryFrom[1], fetched_countryTo[1], fetched_departing[1], fetched_returning[1], fetched_uid[1],
+                                fetched_countryFrom[2], fetched_countryTo[2], fetched_departing[2], fetched_returning[2], fetched_uid[2],
+                                fetched_countryFrom[3], fetched_countryTo[3], fetched_departing[3], fetched_returning[3], fetched_uid[3],
+                                fetched_countryFrom[4], fetched_countryTo[4], fetched_departing[4], fetched_returning[4], fetched_uid[4])
 
 @app.route("/faq")
 #@app.route("/")
