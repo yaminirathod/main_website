@@ -15,7 +15,347 @@
       <li><a href="http://127.0.0.1:5000/faq">FAQ</a></li>
       <li><a href="http://127.0.0.1:5000/covidupdate">Covid19 Updates</a></li>
       <li><a class="active" href="http://127.0.0.1:5000/luggage">Luggage</a></li>
+        <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+        <li><a href="http://127.0.0.1:5000/admin">Admin</a></li>
     </ul>
+
+    <div id="content" class="column2 alignLeft">
+      <div id="pageTitle">
+        <h2 class="title">Checked Baggage Allowances</h2>
+      </div>
+      <div class="cf">
+        <img src="{{ url_for('static', filename='images/baggage.jpg')}}">
+      </div>
+      <div class="content-next">
+        <h3>Domestic</h3>
+        <table class="tableData" width="100%" cellspacing="0" cellpadding="0">
+          <thead>
+            <tr class="evenRow">
+              <th valign="middle" align="left" class="firstTh">
+                Cabin class/Flight
+              </th>
+              <th valign="middle" align="center" class="lastTh">
+                Baggage allowance
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td valign="top" align="left" class="firstTd">First Class</td>
+              <td valign="top" align="center">40Kgs.</td>
+            </tr>
+            <tr class="evenRow">
+              <td valign="top" align="left" class="firstTd">Business Class</td>
+              <td valign="top" align="center">35Kgs.</td>
+            </tr>
+            <tr>
+              <td valign="top" align="left" class="firstTd">Economy Class</td>
+              <td valign="top" align="center">25Kgs.</td>
+            </tr>
+            <tr class="evenRow">
+              <td valign="top" align="left" class="firstTd">
+                Infants in all classes
+              </td>
+              <td valign="top" align="center">10Kgs.</td>
+            </tr>
+            <tr>
+              <td valign="top" align="left" class="firstTd">
+                Alliance Air flights ( except Shimla/Kullu) ( Aircraft types -
+                ATR)*
+              </td>
+              <td valign="top" align="center">15Kgs.</td>
+            </tr>
+            <tr class="lastTr evenRow">
+              <td valign="top" align="left" class="firstTd">
+                Alliance Air flights to/from Shimla / Kullu*
+              </td>
+              <td valign="top" align="center">10Kgs.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          * Passengers travelling on Alliance Air flights and connecting to Air
+          India domestic flights and vice versa, holding a single ticket, will
+          also be eligible for 25Kgs. This offer is however not available for
+          passengers travelling on a ticket exclusively on Alliance Air flights.
+        </p>
+        <h4>Note</h4>
+        <ul class="bulletText">
+          <li>
+            Checked baggage allowance is applicable only on Air India operated
+            flights and not on Air India Express ,Alliance Air or any other Code
+            Share flights.
+          </li>
+          <li>
+            Passenger travelling on Air India domestic sector and connecting to
+            Air India International sector or vice versa on the same ticket, the
+            Free Baggage Allowance of International sector will be applicable.
+          </li>
+          <li>
+            Gold Member of Star Alliance would continue to be permitted an
+            additional 20Kgs of baggage allowance in Economy Class
+          </li>
+          <li>
+            Members of Premium Club and Flying Returns members would continue to
+            be permitted additional baggage, as notified from time to time, over
+            the same.
+          </li>
+          <li>
+            Infants will be entitled to 1 collapsible stroller/carrycot/infant
+            car seat.
+          </li>
+          <li>
+            The maximum weight permissible for a single piece of baggage is 32
+            kgs. This rule is applicable on the entire Air India network.
+          </li>
+          <li>
+            Passengers who are dependent on a wheelchair or other assistive
+            devices and are travelling with such equipment would be entitled to
+            an additional baggage allowance up to 15 kg free of charge subject
+            to the limitations of the aircraft as per DGCA guidelines.
+            Passengers can carry their personal wheelchairs (which are fully
+            collapsible to be stored in the aircraft hold retrievable at the
+            boarding gate) or other assistive devices as additional checked
+            baggage up to 15 kg, free of charge.
+          </li>
+        </ul>
+        <h3>International</h3>
+        <ul class="bulletText">
+          <li>
+            <a href="travel-to-and-from-australia-fe-sea.htm"
+              >Travel to and from Australia &amp; Far east - South East Asia</a
+            >
+          </li>
+          <li>
+            <a href="travel-to-and-from-usa.htm"
+              >Travel to and from USA/Canada</a
+            >
+          </li>
+          <li>
+            <a href="travel-to-and-from-europe-uk-israel.htm"
+              >Travel to and from Europe / UK / Israel</a
+            >
+          </li>
+          <li>
+            <a href="travel-to-and-from-gulf-middle-east.htm"
+              >Travel to and from Gulf and Middle East</a
+            >
+          </li>
+          <li>
+            <a href="travel-to-and-from-saudiarabia.htm"
+              >Travel to and from Saudi Arabia</a
+            >
+          </li>
+          <li>
+            <a href="travel-to-and-from-saarc-countries.htm"
+              >Travel to and from SAARC Countries</a
+            >
+          </li>
+          <li>
+            <a href="travel-to-and-from-africa.htm"
+              >Travel to and from Africa</a
+            >
+          </li>
+        </ul>
+        <h4>Note</h4>
+        <ul class="bulletText">
+          <li>
+            Infants in all classes would be eligible for baggage allowance of 1
+            Pc. - 10 kgs.
+          </li>
+          <li>
+            The maximum weight permissible for a single piece of baggage is 32
+            kgs. This rule is applicable on the entire Air India network.
+          </li>
+          <li>
+            For tickets issued effective 01st April 2019 the free baggage
+            allowance for travel In Economy Class between India to Newark(EWR)
+            is 1 Piece/23 Kgs.
+          </li>
+          <li>
+            The baggage allowance is applicable on AirIndia operated flights
+            only and not on code share flights.
+          </li>
+        </ul>
+        <h3>Weight Concept</h3>
+        <h4>Baggage Dimensions for First and Business</h4>
+        <ul class="bulletText">
+          <li>
+            The sum of the 3 dimensions (length + breadth + height) of each
+            piece must not exceed 62 inches or 158 centimetres for each piece.
+          </li>
+          <li>
+            The maximum weight permissible for a single piece of baggage is 32
+            kgs. or 70 pounds.
+          </li>
+        </ul>
+        <h4>Baggage Dimensions for Economy</h4>
+        <ul class="bulletText">
+          <li>
+            For Economy passengers with two pieces of luggage, the total
+            combined dimensions (length + breadth + height) of both pieces
+            should not exceed 273cm (107 inches). Also the linear dimension of
+            each piece should not exceed 62 inches.
+          </li>
+          <li>The weight of each bag must not exceed 23 Kgs or 50 pounds.</li>
+        </ul>
+        <h3>Piece Concept</h3>
+        <h4>Baggage Dimensions for First and Business</h4>
+        <ul class="bulletText">
+          <li>
+            The sum of the 3 dimensions (length + breadth + height) must not
+            exceed 62 inches or 158 centimetres for each piece.
+          </li>
+          <li>
+            The maximum weight permissible for a single piece of baggage is 32
+            kgs. or 70 pounds.
+          </li>
+        </ul>
+        <h4>Baggage Dimensions for Economy</h4>
+        <ul class="bulletText">
+          <li>
+            The sum of the dimensions (length plus breadth plus height) of both
+            the pieces when added together, must not exceed 107 inches. Also,
+            the linear dimension of each piece should not exceed 62 inches.
+          </li>
+          <li>The weight of each bag must not exceed 23 Kgs or 50 pounds.</li>
+        </ul>
+        <h4>
+          Additional Baggage Allowance on Air India for Flying Returns Members
+        </h4>
+        <ul class="bulletText">
+          <li>
+            On flights operated by Air India / Star Alliance member airline:
+            Primary Active / Active Flying Returns members can enjoy additional
+            baggage allowance as below
+          </li>
+          <li>
+            Additional Baggage Allowance based on Tier of Flying Returns members
+            on Air India flights over and above what is standard or normally
+            allowed depending on Cabin class for both types of flight, weight
+            concept and piece concept sectors respectively.
+          </li>
+        </ul>
+        <table class="tableData" width="100%" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr class="evenRow">
+              <th valign="middle" align="left" class="firstTh">
+                Flying Returns Club
+              </th>
+              <th valign="middle" align="left">Piece Concept Flights</th>
+              <th valign="middle" align="center" class="lastTh">
+                Weight Concept flights
+              </th>
+            </tr>
+            <tr>
+              <td valign="top" align="left" class="firstTd">
+                The Maharajah Club (STAR GOLD) *
+              </td>
+              <td valign="top" align="left">1 Piece as per cabin class</td>
+              <td valign="top" align="center">20 Kgs.</td>
+            </tr>
+            <tr class="evenRow">
+              <td valign="top" align="left" class="firstTd">
+                Golden Edge Club (STAR GOLD) *
+              </td>
+              <td valign="top" align="left">1 Piece as per cabin class</td>
+              <td valign="top" align="center">20 Kgs.</td>
+            </tr>
+            <tr>
+              <td valign="top" align="left" class="firstTd">
+                Silver Edge Club
+              </td>
+              <td valign="top" align="left">1 Piece as per cabin class</td>
+              <td valign="top" align="center">10 Kgs.</td>
+            </tr>
+            <tr class="evenRow">
+              <td valign="top" align="left" class="firstTd">
+                Flying Returns (Base)
+              </td>
+              <td valign="top" align="left">Nil</td>
+              <td valign="top" align="center">Nil</td>
+            </tr>
+            <tr class="lastTr">
+              <td colspan="3" valign="top" align="left" class="firstTd">
+                *For Primary Active / Active members only
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-weight: bold; user-select: auto">
+          *T&amp;C Apply. Extra Baggage allowance &amp; Lounge access subject to
+          change as per government directive.
+        </p>
+        <p>
+          *Currently Extra Baggage allowance not being offered on Vande Bharat
+          Mission flights.
+        </p>
+        <h3>Code-share Flights</h3>
+        <p>
+          For Free Baggage Allowances, Excess Baggage Charges and
+          Optional/Ancillary Fees charged by our code-share partners operating
+          from/to the USA, please refer to their websites via the following
+          links.
+        </p>
+        <table class="tableData" width="100%" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr class="evenRow">
+              <td class="firstTd">Lufthansa</td>
+              <td>
+                Chicago/Denver/Detroit/Los Angeles/Washington, DC-Frankfurt and
+                vice versa. Frankfurt-India and vice versa.
+              </td>
+              <td>
+                <a
+                  href="https://www.lufthansa.com/in/en/baggage-overview"
+                  target="_blank"
+                  >Click Here</a
+                >
+                for details of operating carrier Lufthansa.
+              </td>
+            </tr>
+            <tr class="lastTr">
+              <td class="firstTd">Singapore Airlines</td>
+              <td>Los Angeles/San Franciso-Singapore</td>
+              <td>
+                <a
+                  href="https://www.singaporeair.com/en_UK/in/travel-info/charges-changes/taxes-service-fees/"
+                  target="_blank"
+                  >Click Here</a
+                >
+                for details of operating carrier Singapore Airlines
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h4>Note</h4>
+        <ul class="bulletText">
+          <li>
+            Additional baggage allowance is not available on-Air India flights
+            operated with - ATR / CRJ aircraft, on Airline Partner's flights and
+            on Air India code share flights (i.e. Air India marketed and
+            operated by a Partner Airline OR Partner Airline marketed and
+            operated by Air India).
+          </li>
+          <li>
+            Silver Edge Club (SEC) Members are eligible for additional baggage
+            allowance on flights operated by Air India only, whereas Golden Edge
+            Club (GEC) and The Maharajah Club (TMC) Members (corresponding to
+            Star Gold) are eligible for additional baggage allowance on Star
+            Alliance operated flights also.
+          </li>
+          <li>
+            Ban on Carriage of Lithium Battery Powered Self Balancing Devices in
+            Passenger Baggage. For Power Banks cannot be carried in Checked
+            Baggage but can be carried in Hand Baggage.
+          </li>
+          <li>
+            However, SAMSUNG GALAXY NOTE 7 is banned and cannot be carried in
+            either baggage.
+          </li>
+        </ul>
+      </div>
+    </div>
 
 <div class="copyright">
 	&copy; Copyright. Emerging Technology Project.

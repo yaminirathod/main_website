@@ -9,14 +9,68 @@
     <h1 align="center">Welcome to Air Lambton</h1>
 
     <ul>
-      <li><a class="active" href="http://127.0.0.1:5000/home">Home</a></li>
-      <li><a href="http://127.0.0.1:5000/managebooking">Manage Booking</a></li>
+      <li><a class="active" href="/home">Home</a></li>
+      <li><a href="/managebooking">Manage Booking</a></li>
       <li><a href="http://127.0.0.1:5000/contactus">Contact Us</a></li>
       <li><a href="http://127.0.0.1:5000/faq">FAQ</a></li>
       <li><a href="http://127.0.0.1:5000/covidupdate">Covid19 Updates</a></li>
       <li><a href="http://127.0.0.1:5000/luggage">Luggage</a></li>
         <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+        <li><a href="http://127.0.0.1:5000/admin">Admin</a></li>
     </ul>
+
+    <iframe width="1300" height="480" src="https://www.youtube.com/embed/KsppEjaCyPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div>
+<h2>Make Your Booking</h2>
+
+<div class="newslettermain">
+  <form method="post" name="bookingform" id="bookingform" class="newslettermainform" onSubmit="JavaScript:check();" action="http://127.0.0.1:5000/bookingdata">
+
+      <label>From</label>
+    <select id="countryFrom" name="countryFrom">
+      <option value="india">India</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="bangladesh">Bangladesh</option>
+      <option value="shrilanka">Shrilanka</option>
+      <option value="usa">USA</option>
+    </select><label></label>
+
+      <label>To</label>
+    <select id="countryTo" name="countryTo">
+      <option value="canada">Canada</option>
+      <option value="australia">Australia</option>
+      <option value="usa">India</option>
+      <option value="canada">Bangladesh</option>
+      <option value="australia">Shrilanka</option>
+      <option value="usa">Pakistan</option>
+    </select><label></label>
+
+       <label>Departing</label>
+       <input type="date" id="departing" name="departing">
+
+      <label>Returning</label>
+    <input type="date" id="returning" name="returning">
+
+    <input type="submit" value="Book Now">
+  </form>
+</div>
+</div>
+
+    <div class="homepageimages">
+        <img src="{{ url_for('static', filename='images/nature1.jpg')}}">
+        <img src="{{ url_for('static', filename='images/nature8.jpg')}}">
+        <img src="{{ url_for('static', filename='images/nature3.jpg')}}">
+        <img src="{{ url_for('static', filename='images/nature5.jpg')}}">
+    </div>
+
+    <div class="homepageimages">
+        <img src="{{ url_for('static', filename='images/nature4.jpg')}}">
+        <img src="{{ url_for('static', filename='images/nature6.jpeg')}}">
+        <img src="{{ url_for('static', filename='images/nature7.jpg')}}">
+        <img src="{{ url_for('static', filename='images/nature2.jpg')}}">
+    </div>
 
     <img src="{{ url_for('static', filename='images/1.png')}}">
 

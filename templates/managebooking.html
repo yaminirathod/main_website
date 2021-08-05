@@ -15,7 +15,31 @@
       <li><a href="http://127.0.0.1:5000/faq">FAQ</a></li>
       <li><a href="http://127.0.0.1:5000/covidupdate">Covid19 Updates</a></li>
       <li><a href="http://127.0.0.1:5000/luggage">Luggage</a></li>
+        <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+        <li><a href="http://127.0.0.1:5000/admin">Admin</a></li>
     </ul>
+
+    <div>
+        <h2>Manage Booking</h2>
+        <p>For security reasons, you must confirm your identity before you can view your bookings.</p>
+    </div>
+
+    <img src="{{ url_for('static', filename='images/alert.png')}}">
+
+    <div class="newslettermain">
+    <form method="get" name="managebookingdata" id="managebookingdata" class="newslettermainform" action="http://127.0.0.1:5000/managebookingdata">
+    <label>First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+
+    <label>Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label>Booking Reference</label>
+    <input type="text" id="bookingref" name="bookingref" placeholder="Your booking reference..">
+
+        <input type="submit" value="Retrieve Booking">
+        </form>
+</div>
 
 <div class="copyright">
 	&copy; Copyright. Emerging Technology Project.

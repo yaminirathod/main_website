@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1 align="center">Welcome to Air Lambton</h1>
+
+    <ul>
+      <li><a href="http://127.0.0.1:5000/home">Home</a></li>
+      <li><a href="http://127.0.0.1:5000/managebooking">Manage Booking</a></li>
+      <li><a href="http://127.0.0.1:5000/contactus">Contact Us</a></li>
+      <li><a href="http://127.0.0.1:5000/faq">FAQ</a></li>
+      <li><a href="http://127.0.0.1:5000/covidupdate">Covid19 Updates</a></li>
+      <li><a href="http://127.0.0.1:5000/luggage">Luggage</a></li>
+        <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+        <li><a class="active" href="http://127.0.0.1:5000/admin">Admin</a></li>
+    </ul>
+
+    <div class="about-section">
+      <h1>Hi Admin! Please click below to see list of people who contacted organization!</h1>
+      <p>Phone no: +1 800 299 0000, Email Id: airlambton@gmail.com</p>
+      <p>Hours of operation: Monday to Friday 10AM to 5PM</p>
+    </div>
+
+    <div class="admin-middle">
+      <form method="get" name="contactusfilledform" id="contactusfilledform" action="http://127.0.0.1:5000/contactusfilleddata">
+        <label>Please click here to get the data</label>
+          <input type="submit" value="Get Contact Us Data">
+      </form>
+    </div>
+
+    <div class="admin-middle">
+      <form method="get" name="contactusfilledformdelete" id="contactusfilledformdelete" action="http://127.0.0.1:5000/contactusfilleddatadelete">
+        <label>Please click here to delete the data</label>
+          <input type="submit" value="Delete Contact Us Data">
+      </form>
+    </div>
+
+</body>
+</html>

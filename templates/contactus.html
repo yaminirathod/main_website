@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Contact Us</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="static/jsmain1.js"></script>
 </head>
 <body>
     <h1 align="center">Welcome to Air Lambton</h1>
@@ -15,6 +17,8 @@
       <li><a href="http://127.0.0.1:5000/faq">FAQ</a></li>
       <li><a href="http://127.0.0.1:5000/covidupdate">Covid19 Updates</a></li>
       <li><a href="http://127.0.0.1:5000/luggage">Luggage</a></li>
+        <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+        <li><a href="http://127.0.0.1:5000/admin">Admin</a></li>
     </ul>
 
     <div class="about-section">
@@ -29,7 +33,7 @@
           <img src="{{ url_for('static', filename='images/payal.png')}}">
       </div>
       <div class="container">
-        <h2>Payal Desai</h2>
+        <h3>Payal Desai</h3>
       </div>
     </div>
   </div>
@@ -40,7 +44,7 @@
            <img src="{{ url_for('static', filename='images/srikanth.jpg')}}">
        </div>
       <div class="container">
-        <h2>Srikanth Yarram</h2>
+        <h3>Srikanth Yarram</h3>
       </div>
     </div>
   </div>
@@ -51,7 +55,7 @@
            <img src="{{ url_for('static', filename='images/yamini.jpg')}}">
        </div>
       <div class="container">
-        <h2>Yamini Rathod</h2>
+        <h3>Yamini Rathod</h3>
       </div>
     </div>
   </div>
@@ -62,7 +66,7 @@
            <img src="{{ url_for('static', filename='images/anjali.jpg')}}">
        </div>
       <div class="container">
-        <h2>Anjali Rakholiya</h2>
+        <h3>Anjali Rakholiya</h3>
       </div>
     </div>
   </div>
@@ -73,7 +77,7 @@
            <img src="{{ url_for('static', filename='images/ahmed.jpg')}}">
        </div>
       <div class="container">
-        <h2>Ahmed Shahid</h2>
+        <h3>Ahmed Shahid</h3>
       </div>
     </div>
   </div>
@@ -82,7 +86,7 @@
 <h2>Contact Form</h2>
 
 <div class="newslettermain">
-  <form method="post" name="contactusform" id="contactusform" class="newslettermainform" action="http://127.0.0.1:5000/contactusdata">
+  <form method="post" name="contactusform" id="contactusform" class="newslettermainform" onSubmit="JavaScript:check();" action="http://127.0.0.1:5000/contactusdata">
     <label>First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your first name..">
 
@@ -112,7 +116,7 @@
       <option value="canada">Bangladesh</option>
       <option value="australia">Shrilanka</option>
       <option value="usa">Pakistan</option>
-    </select>
+    </select><label></label>
 
     <label>Query</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
@@ -122,9 +126,44 @@
 </div>
 </div>
 
+<div class="about-section">
+  <h1>Image Gallary</h1>
+</div>
+
+    <div class="w3-content w3-display-container">
+    <div class="contactus-image-main-slideshow">
+        <img class="mySlides" src="{{ url_for('static', filename='images/travel-world.jpg')}}">
+        <img class="mySlides" src="{{ url_for('static', filename='images/travel-world2.jpg')}}">
+        <img class="mySlides" src="{{ url_for('static', filename='images/travel-world3.jpg')}}">
+        <img class="mySlides" src="{{ url_for('static', filename='images/travel-world4.jpg')}}">
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+</div>
+
 <div class="contactus-image-main">
     <img src="{{ url_for('static', filename='images/location.jpg')}}">
 </div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
 
 <div class="contactus-image-main">
     <img src="{{ url_for('static', filename='images/contactus1.jpg')}}">
