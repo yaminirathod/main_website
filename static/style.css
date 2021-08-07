@@ -126,7 +126,7 @@ height:230px;
 	}
 
 
-  input[type=text], input[type=submit], input[type=date],  input[type=number], input[type=email],select, textarea{
+  input[type=text],input[type=password], input[type=submit], input[type=date],  input[type=number], input[type=email],select, textarea{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
